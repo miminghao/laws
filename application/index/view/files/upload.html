@@ -1,0 +1,170 @@
+{include file="common/header" /}
+
+<!-- 页面内容 开发时删除 -->
+  <!-- 页头 -->
+  <header data-am-widget="header" class="am-header am-header-default">
+      {include file="common/left-link" /}
+
+      <h1 class="am-header-title">
+          <a href="#title-link" class="">
+            上传
+          </a>
+      </h1>
+
+      {include file="common/right-link" /}
+  </header>
+  <!-- 选项卡 -->
+  <div class="am-tabs" data-am-tabs style="margin-top: 50px;">
+    <ul class="am-tabs-nav am-nav am-nav-tabs">
+      <li class="am-active"><a href="#tab1">上传法律法规</a></li>
+      <li><a href="#tab2">上传案例</a></li>
+      <!-- <li><a href="#tab3">流浪</a></li> -->
+    </ul>
+    <div class="am-tabs-bd">
+      <div class="am-tab-panel am-fade am-in am-active" id="tab1">
+          <!-- 上传法律法规 -->
+          <form action="{:url('index/files/uploadLaw')}" enctype="multipart/form-data" method="post" class="am-form">
+              <fieldset>
+              <legend>上传法律法规</legend>
+              <!-- 类别 -->
+              <div class="am-form-group">
+                <label for="type">类别：</label>
+                <select id="type" required="required" class="am-active">
+                  <!-- <option value="">-=请选择一项=-</option> -->
+                    {volist name="cats" id="cats"}
+                  <option value="{$cats.cate_name}">{$cats.cate_name}</option>
+                    {/volist}
+                </select>
+              </div>
+                  <!--标题-->
+                  <div class="am-form-group">
+                      <label for="example">案例标题：</label>
+                      <input type="text" name="law_title"  id="example" placeholder="请输入标题"></input>
+                  </div>
+              <!-- 选择文件 -->
+              <div class="am-form-group">
+                <label for="file">选择文件：</label>
+                <input type="file" id="file" name="files" placeholder="选择文件" class="am-form-field" required/>
+              </div>
+
+                  <!-- 填写案例 -->
+              <div class="am-form-group">
+                   <label for="example">上传说明：</label>
+                    <textarea name="content" id="example" cols="30" rows="5"></textarea>
+              </div>
+              <div class="am-form-group">
+                  <button id=""  type="submit" class="am-btn am-btn-success">上传</button>
+              </div>
+              </fieldset>
+          </form>
+      </div>
+      <div class="am-tab-panel am-fade" id="tab2" style="height: 500px;">
+          <!-- 上传案例 -->
+          <form action="{:url('index/article/addarticle')}"  method="post" class="am-form">
+            <fieldset>
+            <legend>上传案例</legend>
+            <!-- 选择类型 -->
+            <div class="am-form-group">
+              <label for="doc-vld-name">类型：</label>
+              <!-- <input type="text" id="doc-vld-name" minlength="3" placeholder="输入用户名" class="am-form-field" required/> -->
+              <!-- <select name="" id="typeFirst">
+                <option value="">民事案例</option>
+                <option value="">刑事案例</option>
+                <option value="">商事案例</option>
+                <option value="">1</option>
+                <option value="">1</option>
+              </select>
+              <select name="" id="typeSecond">
+                <option value="">1</option>
+                <option value="">1</option>
+                <option value="">1</option>
+                <option value="">1</option>
+                <option value="">1</option>
+              </select> -->
+              <select multiple data-am-selected>
+                  <optgroup label="民事">
+                  {volist name="label" id="lab"}
+                  <option value="{$lab.lab_name}">{$lab.lab_name}</option>
+                  {/volist}
+                </optgroup>
+                <optgroup label="刑事">
+                    {volist name="labels" id="labs"}
+                  <option value="{$labs.lab_name}">{$labs.lab_name}</option>
+                    {/volist}
+                </optgroup>
+              </select>
+            </div>
+                <!--案例标题-->
+                <div class="am-form-group">
+                    <label for="example">案例标题：</label>
+                    <input type="text" name="title"  id="example" placeholder="请输入标题"></input>
+                </div>
+            <!-- 填写案例 -->
+              <div class="am-form-group">
+                <label for="example">案例说明：</label>
+
+                <textarea name="content" id="example" cols="30" rows="10"></textarea>
+              </div>
+              <div class="am-form-group">
+                <button id=""  type="submit" class="am-btn am-btn-success">上传</button>
+              </div>
+            </fieldset>
+          </form>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 留白 50px-->
+<div style="height: 50px;">
+
+</div>
+
+{include file="common/footer" /}
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__STATIC__/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!-- <script src="__STATIC__/assets/js/jquery.min.js"></script> -->
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="__STATIC__/assets/js/amazeui.min.js"></script>
+<script>
+    // $(function(){
+    //   var $slider = $('#demo-slider-0');
+    //   var counter = 0;
+    //   var getSlide = function() {
+    //     counter++;
+    //     return '<li><img src="http://s.amazeui.org/media/i/demos/bing-' +
+    //       (Math.floor(Math.random() * 4) + 1) + '.jpg" />' +
+    //       '<div class="am-slider-desc">动态插入的 slide ' + counter + '</div></li>';
+    //   };
+
+    //   $('.js-demo-slider-btn').on('click', function() {
+    //     var action = this.getAttribute('data-action');
+    //     if (action === 'add') {
+    //       $slider.flexslider('addSlide', getSlide());
+    //     } else {
+    //       var count = $slider.flexslider('count');
+    //       count > 1 && $slider.flexslider('removeSlide', $slider.flexslider('count') - 1);
+    //     }
+    //   });
+
+    // });
+    $(function() {
+        $('.am-slider').flexslider({
+            // options
+            controlNav: false,
+            pausePlay: true
+        });
+        // 点击进入律师页
+        $('.lawyer-item').click(function(){
+            $(location).attr('href', 'lawyer.html');
+        });
+    });
+</script>
+</body>
+</html>

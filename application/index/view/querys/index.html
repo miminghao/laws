@@ -1,0 +1,153 @@
+
+{include file="common/header" /}
+
+
+
+<!-- 页面内容 开发时删除 -->
+  <!-- 页头 -->
+  <header data-am-widget="header"
+          class="am-header am-header-default">
+      {include file="common/left-link" /}
+
+      <h1 class="am-header-title">
+          <a href="#title-link" class="">
+            查询
+          </a>
+      </h1>
+
+      {include file="common/right-link" /}
+  </header>
+  
+  <!-- 查询框 -->
+  <div class="search am-g">
+    <div id="options-btn" class="am-u-sm-3">筛选</div>
+    <input class="search-box am-u-sm-6" type="text" placeholder="请输入关键词">
+    <div class="search-btn am-u-sm-3"><i class="am-header-icon am-icon-bars"></i></div>
+  </div>
+  <!-- 选项卡 -->
+  <div class="options">
+    <!-- 分库查询 -->
+    <div class="am-g">
+      <div class="am-u-sm-4 option-hd">分库查询：</div>
+      <div class="am-u-sm-8">
+        <select data-am-selected>
+          <option value="a" selected>全部</option>
+          <option value="b">库A</option>
+          <option value="o">库B</option>
+          <option value="m">库C</option>
+          <option value="d">库D</option>
+        </select>
+      </div>
+    </div>
+    <!-- 发布部门 -->
+    <div class="am-g">
+      <div class="am-u-sm-4 option-hd">发布部门</div>
+      <div class="am-u-sm-8">
+        <select multiple data-am-selected>
+          <option value="a">Apple</option>
+          <option value="b">Banana</option>
+          <option value="o">Orange</option>
+          <option value="m">Mango</option>
+        </select>
+      </div>
+    </div>
+    <!-- 生效日期 -->
+    <div class="am-g">
+      <div class="am-u-sm-4 option-hd">生效日期</div>
+      <div class="am-u-sm-8">
+        <input class="am-u-sm-6 am-btn" type="text" class="am-form-field" placeholder="生效日期" data-am-datepicker readonly required />
+        <input class="am-u-sm-6 am-btn" type="text" class="am-form-field" placeholder="失效日期" data-am-datepicker readonly required />
+      </div>
+    </div>
+    <!-- 查询范围 -->
+    <div class="am-g">
+      <div class="am-u-sm-4 option-hd">查询范围</div>
+      <div class="am-u-sm-8">
+          <label class="am-checkbox-inline">
+            <input type="checkbox"  value="" data-am-ucheck> 标题
+          </label>
+          <label class="am-checkbox-inline">
+            <input type="checkbox"  value="" data-am-ucheck> 内容
+          </label>
+          <label class="am-checkbox-inline">
+            <input type="checkbox"  value="" data-am-ucheck> 帖子
+          </label>
+      </div>
+    </div>
+    <!-- 效力状况 -->
+    <div class="am-g">
+      <div class="am-u-sm-4 option-hd">效力状况</div>
+      <div>
+        <div class="am-u-sm-8">
+          <label class="am-radio-inline">
+            <input type="radio" name="radio10" value="male" data-am-ucheck> 有效
+          </label>
+          <label class="am-radio-inline">
+            <input type="radio" name="radio10" value="female" data-am-ucheck> 失效
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 按钮组 -->
+  <!-- <div class="am-btn-toolbar am-g m-t-40 p-rl-20">
+    <div class="am-btn-group am-btn-group-lg am-btn-group-justify">
+      <a class="am-btn am-btn-default am-round" role="button">法律库</a>
+      <input class="search-box" type="text" placeholder="请输入关键词">
+      <a class="am-btn am-btn-default " role="button">律师库</a>
+      <a class="am-btn am-btn-default am-round" role="button">个人</a>
+    </div>
+  </div> -->
+
+
+
+{include file="common/footer" /}
+
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__STATIC__/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!-- <script src="__STATIC__/assets/js/jquery.min.js"></script> -->
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="__STATIC__/assets/js/amazeui.min.js"></script>
+<script>
+    // $(function(){
+    //   var $slider = $('#demo-slider-0');
+    //   var counter = 0;
+    //   var getSlide = function() {
+    //     counter++;
+    //     return '<li><img src="http://s.amazeui.org/media/i/demos/bing-' +
+    //       (Math.floor(Math.random() * 4) + 1) + '.jpg" />' +
+    //       '<div class="am-slider-desc">动态插入的 slide ' + counter + '</div></li>';
+    //   };
+
+    //   $('.js-demo-slider-btn').on('click', function() {
+    //     var action = this.getAttribute('data-action');
+    //     if (action === 'add') {
+    //       $slider.flexslider('addSlide', getSlide());
+    //     } else {
+    //       var count = $slider.flexslider('count');
+    //       count > 1 && $slider.flexslider('removeSlide', $slider.flexslider('count') - 1);
+    //     }
+    //   });
+
+    // });
+    $(function() {
+        $('.am-slider').flexslider({
+            // options
+            controlNav: false,
+            pausePlay: true
+        });
+        // 点击进入律师页
+        $('.lawyer-item').click(function(){
+            $(location).attr('href', 'lawyer.html');
+        });
+    });
+</script>
+</body>
+</html>

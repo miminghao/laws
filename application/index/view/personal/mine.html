@@ -1,0 +1,203 @@
+{include file="common/header" /}
+  <style>
+    #footer{
+      /*margin-top: 50px;*/
+    }
+    #bgImage{
+      height: 180px;
+      width: 100%;
+      
+    }
+    #porImage{
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      position: absolute;
+      top: calc(50% - 40px);
+      left: calc(50% - 40px);
+    }
+    #personalData{
+      position: relative;
+      background-color: #0e90d2;
+      height: 180px;
+      width: 100%;
+    }
+    #userName{
+      height: 30px;
+      line-height: 30px;
+      position: absolute;
+      top: calc(50% + 40px);
+      width: 100%;
+      text-align: center;
+      color: #fff;
+    }
+    #accordion{
+      margin-top: 2rem;
+    }
+    #loginOut{
+      line-height: 1.5;
+      color: #fff;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- 页面内容 开发时删除 -->
+  <!-- 页头 -->
+  <header data-am-widget="header"
+          class="am-header am-header-default">
+      {include file="common/left-link" /}
+
+      <h1 class="am-header-title">
+          <a href="#title-link" class="">
+            我的
+          </a>
+      </h1>
+
+      {include file="common/right-link" /}
+  </header>
+  
+  <!-- 头像 -->
+  <div id="personalData">
+    <!-- 背景图 -->
+    <!-- <img id="bgImage" src="http://s.amazeui.org/media/i/demos/bing-1.jpg" alt=""> -->
+    <!-- 头像 -->
+    <div ><img id="porImage" src="http://s.amazeui.org/media/i/demos/bing-1.jpg" alt=""></div>
+    <!-- 昵称 -->
+    <div id="userName">我叫普法神器</div>
+  </div>
+  <!-- 导航栏 暂无-->
+  <!-- <div >
+    
+  </div> -->
+  <!-- 栏目列表 -->
+  <!-- <div class="mineList">
+    <div class="mineItem">
+        关于神器
+    </div>
+    <div class="mineItem">
+        分享神器
+    </div>
+    <div class="mineItem">
+        设置神器
+    </div>
+    <div class="mineItem">
+        联系神器
+    </div>
+  </div> -->
+  <!-- 手风琴栏目列表 -->
+  <div class="am-panel-group" id="accordion">
+    <div class="am-panel am-panel-default">
+      <div class="am-panel-hd">
+        <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-1'}">
+          关于神器
+        </h4>
+      </div>
+      <div id="do-not-say-1" class="am-panel-collapse am-collapse ">
+        <div class="am-panel-bd">
+          普法神器是一款用于法律服务的软件      
+        </div>
+      </div>
+    </div>
+    <div class="am-panel am-panel-default">
+      <div class="am-panel-hd">
+        <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-2'}">
+          分享神器
+        </h4>
+      </div>
+      <div id="do-not-say-2" class="am-panel-collapse am-collapse">
+        <div class="am-panel-bd">
+          选择要分享的平台
+          <button>QQ</button>
+          <button>微信</button>
+          <button>微博</button>
+        </div>
+      </div>
+    </div>
+    <div class="am-panel am-panel-default">
+      <div class="am-panel-hd">
+        <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-3'}">
+          设置神器
+        </h4>
+      </div>
+      <div id="do-not-say-3" class="am-panel-collapse am-collapse">
+        <div class="am-panel-bd">
+            接收消息<input type="checkbox" data-am-switch data-size="xs" /><br>
+            声音提示<input type="checkbox" data-am-switch data-size="xs" /><br>
+            震动提示<input type="checkbox" data-am-switch data-size="xs" /><br>
+            <button >清除缓存</button>
+        </div>
+      </div>
+    </div>
+    <div class="am-panel am-panel-default">
+      <div class="am-panel-hd">
+        <h4 class="am-panel-title" data-am-collapse="{parent: '#accordion', target: '#do-not-say-4'}">
+          联系神器
+        </h4>
+      </div>
+      <div id="do-not-say-4" class="am-panel-collapse am-collapse">
+        <div class="am-panel-bd">
+            <span><a href="tel:15231192163">联系我们</a></span>
+            <br>
+            <span>8:00 - 17:00</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 退出登录按钮 -->
+  <a id="loginOut" href="{:url('index/login/login')}" class="am-btn am-btn-danger">退出登录</a>
+
+
+
+{include file="common/footer" /}
+
+<script src="assets/js/amazeui.switch.min.js"></script>
+
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__STATIC__/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!-- <script src="__STATIC__/assets/js/jquery.min.js"></script> -->
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="__STATIC__/assets/js/amazeui.min.js"></script>
+<script>
+    // $(function(){
+    //   var $slider = $('#demo-slider-0');
+    //   var counter = 0;
+    //   var getSlide = function() {
+    //     counter++;
+    //     return '<li><img src="http://s.amazeui.org/media/i/demos/bing-' +
+    //       (Math.floor(Math.random() * 4) + 1) + '.jpg" />' +
+    //       '<div class="am-slider-desc">动态插入的 slide ' + counter + '</div></li>';
+    //   };
+
+    //   $('.js-demo-slider-btn').on('click', function() {
+    //     var action = this.getAttribute('data-action');
+    //     if (action === 'add') {
+    //       $slider.flexslider('addSlide', getSlide());
+    //     } else {
+    //       var count = $slider.flexslider('count');
+    //       count > 1 && $slider.flexslider('removeSlide', $slider.flexslider('count') - 1);
+    //     }
+    //   });
+
+    // });
+
+
+</script>
+<script>
+
+    $(function() {
+        // 退出登录
+        $('#loginOut').click();
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+{include file="common/header" /}
+  <style>
+    #footer{
+      /*margin-top: 50px;*/
+    }
+    #bgImage{
+      height: 180px;
+      width: 100%;
+      
+    }
+    #porImage{
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      position: absolute;
+      top: calc(50% - 40px);
+      left: calc(50% - 40px);
+    }
+    #personalData{
+      position: relative;
+      background-color: #0e90d2;
+      height: 180px;
+      width: 100%;
+    }
+    #userName{
+      height: 30px;
+      line-height: 30px;
+      position: absolute;
+      top: calc(50% + 40px);
+      width: 100%;
+      text-align: center;
+      color: #fff;
+    }
+    #accordion{
+      margin-top: 2rem;
+    }
+    #evaluate{
+      background-color: #f5f5f5;
+      height: 5rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 2rem;
+    }
+    #evaluate div{
+      /*width: 30%;*/
+    }
+    #priceList{
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+      background-color: #f5f5f5;
+    }
+    .priceItem{
+      padding: 1rem;
+      width:calc(100% / 3); 
+      text-align: center; 
+    }
+    #chat{
+      width: 40%;
+      position: fixed;
+      bottom: 50px;
+      opacity: 0.8;
+      left: 30%;
+      height: 80px;
+      line-height: 58px;
+      border-radius: 50%;
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+
+<!-- 页面内容 开发时删除 -->
+  <!-- 页头 -->
+  <header data-am-widget="header"
+          class="am-header am-header-default">
+      {include file="common/left-link" /}
+
+      <h1 class="am-header-title">
+          <a href="#title-link" class="">
+            律师名片
+          </a>
+      </h1>
+
+      {include file="common/right-link" /}
+  </header>
+  <!-- 头像 -->
+  <div id="personalData">
+    <!-- 背景图 -->
+    <img id="bgImage" src="http://s.amazeui.org/media/i/demos/bing-1.jpg" alt="">
+    <!-- 头像 -->
+    <div ><img id="porImage" src="http://s.amazeui.org/media/i/demos/bing-1.jpg" alt=""></div>
+    <!-- 昵称 -->
+    <div id="userName">李律师</div>
+  </div>
+  <!-- 综合评价 -->
+  <div id="evaluate">
+    <!-- 总评分 -->
+    <div class="score">
+       5.0评分
+    </div>
+    <!-- 服务人数 -->
+    <div class="helpNumber">
+       311人
+    </div>
+    <!-- 点赞数 -->
+    <div class="agreeNumber">
+       30人
+    </div>
+  </div>
+  <!-- 价格详情 -->
+  <div id="priceList">
+      <div class="priceItem">
+          <span class="am-icon-qq"></span><br>
+          文字咨询<br>
+          <div>￥20/次</div>
+      </div>
+      <div class="priceItem">
+          <span class="am-icon-qq"></span><br>
+          电话咨询<br>
+          <div>￥30/次</div>
+      </div>
+      <div class="priceItem">
+          <span class="am-icon-qq"></span><br>
+          私人律师<br>
+          <div>￥58/次</div>
+      </div>
+      <div class="priceItem">
+          <span class="am-icon-qq"></span><br>
+          文书服务<br>
+          <div>￥50/次</div>
+      </div>
+      <div class="priceItem">
+          <span class="am-icon-qq"></span><br>
+          律师函<br>
+          <div>￥300/份</div>
+      </div>
+      <div class="priceItem">
+          <span class="am-icon-qq"></span><br>
+          线下面谈<br>
+          <div>￥2000/次</div>
+      </div>
+  </div>
+  <!-- 在线交流 -->
+  <a id="chat" href="./chat.html" class="am-btn am-btn-success">在线交流</a>
+
+{include file="common/footer" /}
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__STATIC__/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<!-- <script src="__STATIC__/assets/js/jquery.min.js"></script> -->
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="__STATIC__/assets/js/amazeui.min.js"></script>
+<script>
+    // $(function(){
+    //   var $slider = $('#demo-slider-0');
+    //   var counter = 0;
+    //   var getSlide = function() {
+    //     counter++;
+    //     return '<li><img src="http://s.amazeui.org/media/i/demos/bing-' +
+    //       (Math.floor(Math.random() * 4) + 1) + '.jpg" />' +
+    //       '<div class="am-slider-desc">动态插入的 slide ' + counter + '</div></li>';
+    //   };
+
+    //   $('.js-demo-slider-btn').on('click', function() {
+    //     var action = this.getAttribute('data-action');
+    //     if (action === 'add') {
+    //       $slider.flexslider('addSlide', getSlide());
+    //     } else {
+    //       var count = $slider.flexslider('count');
+    //       count > 1 && $slider.flexslider('removeSlide', $slider.flexslider('count') - 1);
+    //     }
+    //   });
+
+    // });
+    $(function() {
+        $('.am-slider').flexslider({
+            // options
+            controlNav: false,
+            pausePlay: true
+        });
+        // 点击进入律师页
+        $('.lawyer-item').click(function(){
+            $(location).attr('href', 'lawyer.html');
+        });
+    });
+</script>
+</body>
+</html>

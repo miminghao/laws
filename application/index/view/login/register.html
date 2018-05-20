@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>注册</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <!-- <meta http-equiv="Cache-Control" content="no-siteapp" /> -->
+  <!-- <link rel=" icon" type="image/png" href="__STATIC__/assets/i/favicon.png"> -->
+  <link rel="stylesheet" href="__STATIC__/assets/css/amazeui.min.css"/>
+  <style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 200%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+    #getCode{
+      position: absolute;
+      top: calc(50% - 13px);
+      right: 0.5rem;
+      height: 32px;
+      padding: 4px 8px;
+    }
+    .messageCode{
+      position: relative;
+
+    }
+    .flex{
+    	display: flex;
+    	justify-content: space-around;
+    }
+    #title{
+		color: #3bb4f2;
+		font-size: 2rem;
+		font-weight: 600;
+		margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <div class="am-g">
+    <h1>普法神器</h1>
+    <div id="title">Register</div>
+  </div>
+ 
+</div>
+<div class="am-g">
+  <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">  
+    <hr>
+    <form action="{:url('index/login/register')}" method="post" class="am-form">
+      <!-- 姓名 -->
+      <div class="name">
+        <label for="name">姓名:</label>
+        <input type="text" name="realname" id="name" value="" autofocus="autofocus" placeholder="请输入你的姓名" required="required">
+        <br>
+      </div>
+      <!-- 身份证号码 -->
+      <div class="IDNumber">
+        <label for="IDNumber">身份证号码:</label>
+        <input type="text" name="IdCard" id="IDNumber" value="" placeholder="请输入你的身份证号码" required="required">
+        <br>
+      </div>
+      <!-- 手机号 -->
+      <div class="phoneNumber">
+        <label for="phone">手机号:</label>
+        <input type="number" name="telephone" id="phone" value="" placeholder="请输入你的手机号码" required="required">
+        <br>
+      </div>
+      <!-- 短信验证码 -->
+      <div class="messageCode">
+        <label for="password">短信验证码:</label>
+        <input type="number" name="password" id="password" value="" placeholder="请输入你的短信验证码" required="required">
+        <button id="getCode" class="am-btn am-btn-success">获取验证码</button>
+        <br>
+      </div>
+      <!-- 记住密码 -->
+      <!-- <div class="rememberPassword">
+        <label for="remember-me">
+        <input id="remember-me" type="checkbox">
+          记住密码
+        </label>
+        <br />
+      </div> -->
+      <!-- 注册按钮组 -->
+      <div class="am-btn-group flex">
+        <a href="./login.html" class="am-btn am-btn-secondary am-btn-sm ">前往登录</a>
+        <!-- <a href="#" class="am-btn am-btn-success am-btn-sm "><i class="am-icon-github am-icon-sm"></i> 律师登录</a> -->
+        <button  type="submit" class="am-btn am-btn-warning am-btn-sm " >用户注册</button>
+        <button type="submit" class="am-btn am-btn-danger am-btn-sm ">律师注册</button> 
+      </div>
+    </form>
+    <hr>
+    
+
+    <!-- <p>© 2014 AllMobilize, Inc. Licensed under MIT license.</p> -->
+  </div>
+  <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // $.$.ajax({
+    //   url: 'http://localhost/pufashenqi/dysms_php/aliyun-dysms-php-sdk/api_demo/SmsDemo.php',
+    //   type: 'default GET (Other values: POST)',
+    //   dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
+    //   data: {param1: 'value1'},
+    // })
+    // .done(function() {
+    //   console.log("success");
+    // })
+    // .fail(function() {
+    //   console.log("error");
+    // })
+    // .always(function() {
+    //   console.log("complete");
+    // });
+    $(function(){     
+       // 验证码按钮倒计时
+       function countDown(){
+            console.log(second);
+            if(second){
+              $('#getCode').html(second+'秒后可重发');
+              second--;
+            }else{
+              $('#getCode').html('获取验证码');
+              $('#getCode').attr('disabled',false);
+              clearInterval(time);
+            }            
+       }
+       // 短信验证码
+       $('#getCode').click(function(){
+          $(this).attr('disabled',true);
+          second = 60;//必须为全局变量
+          time = setInterval(countDown,1000);//必须为全局变量
+       });
+    });
+  </script>
+</div>
+</body>
+</html>

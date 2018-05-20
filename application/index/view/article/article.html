@@ -1,0 +1,244 @@
+<!-- 类似于文章 -->
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>普法神器</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="alternate icon" type="image/png" href="__STATIC__/assets/i/favicon.png">
+  <link rel="stylesheet" href="__STATIC__/assets/css/amazeui.min.css"/>
+  <style>
+    @media only screen and (min-width: 641px) {
+      .am-offcanvas {
+        display: block;
+        position: static;
+        background: none;
+      }
+
+      .am-offcanvas-bar {
+        position: static;
+        width: auto;
+        background: none;
+        -webkit-transform: translate3d(0, 0, 0);
+        -ms-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+      .am-offcanvas-bar:after {
+        content: none;
+      }
+
+    }
+
+    @media only screen and (max-width: 640px) {
+      .am-offcanvas-bar .am-nav>li>a {
+        color:#ccc;
+        border-radius: 0;
+        border-top: 1px solid rgba(0,0,0,.3);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.05)
+      }
+
+      .am-offcanvas-bar .am-nav>li>a:hover {
+        background: #404040;
+        color: #fff
+      }
+
+      .am-offcanvas-bar .am-nav>li.am-nav-header {
+        color: #777;
+        background: #404040;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.05);
+        text-shadow: 0 1px 0 rgba(0,0,0,.5);
+        border-top: 1px solid rgba(0,0,0,.3);
+        font-weight: 400;
+        font-size: 75%
+      }
+
+      .am-offcanvas-bar .am-nav>li.am-active>a {
+        background: #1a1a1a;
+        color: #fff;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,.3)
+      }
+
+      .am-offcanvas-bar .am-nav>li+li {
+        margin-top: 0;
+      }
+    }
+
+    .my-head {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .my-button {
+      position: fixed;
+      top: 0;
+      right: 0;
+      border-radius: 0;
+    }
+    .my-sidebar {
+      padding-right: 0;
+      border-right: 1px solid #eeeeee;
+    }
+
+    .my-footer {
+      border-top: 1px solid #eeeeee;
+      padding: 10px 0;
+      margin-top: 10px;
+      text-align: center;
+    }
+    #help{
+      position: fixed;
+      /*height: 40px;*/
+      /*line-height: 40px;*/
+      bottom: 2%;
+      font-size: 2rem;
+      right: 5%;
+      opacity: 0.8;
+    }
+    #myAnswer{
+      display: none;
+      width: 380px;
+      margin: 0 auto;
+      padding: 0 12px;
+      position: fixed;
+      bottom: 0;
+      right: calc(50% - 190px);
+    }
+    #myAnswer input{
+      width: 70%;
+      height: 40px;
+    }
+    #myAnswer button{
+      width: calc(30% - 6px);
+    }
+  </style>
+</head>
+<body>
+<!-- 页头 -->
+  <header data-am-widget="header"
+          class="am-header am-header-default">
+      {include file="common/left-link" /}
+
+      <h1 class="am-header-title">
+          <a href="" class="">
+            话题
+          </a>
+      </h1>
+
+      {include file="common/right-link" /}
+  </header>
+<div class="am-g my-head">
+
+  <div class="am-u-sm-12 am-article">
+    <h1 class="am-article-title">{$info.title}</h1>
+    <p class="am-article-meta">{$info.user}</p>
+  </div>
+</div>
+<hr class="am-article-divider"/>
+<div class="am-g am-g-fixed">
+  <div class="am-u-md-9 am-u-md-push-3">
+    <div class="am-g">
+      <div class="am-u-sm-11 am-u-sm-centered">
+        <div class="am-cf am-article">
+          <!--<div class="am-align-left">-->
+            <!--<img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" alt="" width="240">-->
+          <!--</div>-->
+          <!--<div>-->
+            <!--那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。我白色风衣的大口袋里有一封要寄给南部的母亲的信。樱子说她可以撑伞过去帮我寄信。我默默点头。-->
+          <!--</div>-->
+          <!--<p>“谁叫我们只带来一把小伞哪。”她微笑着说，一面撑起伞，准备过马路帮我寄信。从她伞骨渗下来的小雨点，溅在我的眼镜玻璃上。</p><p>随着一阵拔尖的煞车声，樱子的一生轻轻地飞了起来。缓缓地，飘落在湿冷的街面上，好像一只夜晚的蝴蝶。</p>-->
+          <!--<p>虽然是春天，好像已是秋深了。</p>-->
+          <!--<div class="am-align-right"><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="" width="240"></div>-->
+          <!--<p>她只是过马路去帮我寄信。这简单的行动，却要叫我终身难忘了。我缓缓睁开眼，茫然站在骑楼下，眼里裹着滚烫的泪水。世上所有的车子都停了下来，人潮涌向马路中央。没有人知道那躺在街面的，就是我的，蝴蝶。这时她只离我五公尺，竟是那么遥远。更大的雨点溅在我的眼镜上，溅到我的生命里来。</p>-->
+          <!--<p>为什么呢？只带一把雨伞？</p>-->
+          <!--<p>然而我又看到樱子穿着白色的风衣，撑着伞，静静地过马路了。她是要帮我寄信的。那，那是一封写给南部母亲的信。我茫然站在骑楼下，我又看到永远的樱子走到街心。其实雨下得并不大，却是一生一世中最大的一场雨。而那封信是这样写的，年轻的樱子知不知道呢？</p>-->
+            {$info.content}
+        </div>
+        <hr/>
+        <ul class="am-comments-list">
+          {volist name="comm" id="co"}
+          <li class="am-comment">
+            <a href="#link-to-user-home">
+              <img src="http://s.amazeui.org/media/i/demos/bw-2014-06-19.jpg?imageView/1/w/96/h/96/q/80" alt="" class="am-comment-avatar" width="48" height="48">
+            </a>
+            <div class="am-comment-main">
+              <header class="am-comment-hd">
+                <div class="am-comment-meta">
+                  <a href="#link-to-user" class="am-comment-author">{$co.uid}</a> 评论于    {$co.create_time}
+                  <!--<time datetime="2013-07-27T04:54:29-07:00" title="2013年7月27日 下午7:54 格林尼治标准时间+0800">2014-7-12 15:30:48</time>-->
+                </div>
+              </header>
+              <div class="am-comment-bd">
+                <p> {$co.comments} </p>
+              </div>
+            </div>
+          </li>
+          {/volist}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 回答按钮 -->
+  <button id="help" class="am-btn am-btn-success"><i class="am-icon-heart"></i>热心解答<i class="am-icon-heart"></i></button>
+  <!-- 我的回答 -->
+  <div id="myAnswer">
+       <form action="{:url('index/comments/addCom')}">
+          <!-- <textarea name="" id="" cols="30" rows="1">
+         
+          </textarea> -->
+          <input type="text" placeholder="输入你的回答！">
+          <button class="am-btn am-btn-success" type="submit">提交</button>
+       </form>
+  </div>
+  <!-- <div class="am-u-md-3 am-u-md-pull-9 my-sidebar">
+    <div class="am-offcanvas" id="sidebar">
+      <div class="am-offcanvas-bar">
+        <ul class="am-nav">
+          <li><a href="#">永远的蝴蝶</a></li>
+          <li class="am-nav-header">目录</li>
+          <li><a href="#">原文</a></li>
+          <li><a href="#">作者简介</a></li>
+          <li><a href="#">文章赏析</a></li>
+          <li><a href="#">读者评论</a></li>
+        </ul>
+      </div>
+    </div>
+  </div> -->
+  <!-- <a href="#sidebar" class="am-btn am-btn-sm am-btn-success am-icon-bars am-show-sm-only my-button" data-am-offcanvas><span class="am-sr-only">侧栏导航</span></a> -->
+</div>
+
+<!-- <footer class="my-footer">
+  <p>sidebar template<br><small>© Copyright XXX. by the AmazeUI Team.</small></p>
+</footer> -->
+
+<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="__STATIC__/assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+<!--[if (gte IE 9)|!(IE)]><!-->
+<script src="__STATIC__/assets/js/jquery.min.js"></script>
+<!--<![endif]-->
+<script src="__STATIC__/assets/js/amazeui.min.js"></script>
+<!-- 回答问题 -->
+<script type="text/javascript">
+  $(function(){
+     
+      $('#help').click(function(){
+        console.log('进行解答！');
+        $('#myAnswer').show();
+        $(this).hide();
+      });
+      $('form button[type="submit"]').click(function(){
+        console.log('进行提交！');
+        $('#myAnswer').hide();
+        $('help').show();
+      });
+  });
+</script>
+</body>
+</html>
